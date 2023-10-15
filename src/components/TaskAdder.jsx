@@ -50,7 +50,7 @@ const TaskAdder = ({ setList }) => {
           required
           placeholder="What needs to be done"
         />
-        <button>Add Task!</button>
+        <button>++++</button>
       </form>
     </div>
   );
