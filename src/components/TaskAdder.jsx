@@ -3,7 +3,7 @@ import { taskEmojis } from "../data/emojis";
 
 const TaskAdder = ({ setList }) => {
   const [newTaskDesc, setNewTaskDesc] = useState("");
-  const [emoji, setEmoji] = useState("");
+  const [emoji, setEmoji] = useState("Type");
 
   const addTask = (event) => {
     event.preventDefault();
@@ -15,19 +15,18 @@ const TaskAdder = ({ setList }) => {
       alert("Please select an emoji type.");
       return;
     }
-    setEmoji("")
+    setEmoji("Type")
     setNewTaskDesc("");
   };
 
   return (
-    <div className="TaskAdder">
+    <div className="task-adder">
       <form onSubmit={addTask}>
         <select
-          defaultValue={"Type"}
           value={emoji}
           onChange={(event) => setEmoji(event.target.value)}
         >
-          <option value="" disabled selected>
+          <option value="Type" disabled>
             Type
           </option>
           {taskEmojis.map((emoji, index) => {
